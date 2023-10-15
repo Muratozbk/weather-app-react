@@ -1,10 +1,10 @@
+import WeatherApp from "./Components/WeatherApp/WeatherApp";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>test app</p>
-      </header>
+      <WeatherApp />
+
     </div>
   );
 }
