@@ -9,8 +9,9 @@ import snow_icon from '../Assets/snow.png';
 import wind_icon from '../Assets/wind.png';
 import humidity_icon from '../Assets/humidity.png';
 
+
 const WeatherApp = () => {
-    const api_key = "7eeba2fe33e21f0febbd0f44c3522f47";
+    const api_key = process.env.REACT_APP_API_KEY;
     const [cityInput, setCityInput] = useState('London');
     const [wicon, setWicon] = useState(cloud_icon);
     const [weatherData, setWeatherData] = useState({
@@ -26,7 +27,6 @@ const WeatherApp = () => {
             const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=Metric&appid=${api_key}`;
             const response = await fetch(url);
             const data = await response.json();
-            console.log(data)
 
             const iconMapping = {
                 "01d": clear_icon,
